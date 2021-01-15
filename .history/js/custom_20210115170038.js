@@ -10,8 +10,8 @@ function calculateLoan(){
     }
 
     //Total Monthly Payment ALGO*******************
-                                                                                  //(1+rate/1200)^(-NumberOfMonths)
-    let totalMonthlyPayment = (loanAmount) * (interestRate/1200) / (1 -   Math.pow( (1 + interestRate/1200) , (-months) ) )
+
+    let totalMonthlyPayment = (loanAmount) * (interestRate/1200) / (1 -   MATH   (1 + interestRate/1200)      (-months) )
 
     //Total Monthly Payment ALGO*******************
 

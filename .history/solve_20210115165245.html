@@ -36,10 +36,10 @@
 
         <div class="row">
             <div class="col-2">
-                <label for="Loan Amount">Loan Amount($)</label>
+                <label for="Loan Amount">Loan Amount</label>
             </div>
             <div class="col-2">
-                <input type="number" class="form-control" id="loanAmount" placeholder="100000">
+                <input type="number" class="form-control" id="loanAmount">
             </div>
         </div>    
 
@@ -48,7 +48,7 @@
                 <label for="Term">Term(Months)</label>
             </div>
             <div class="col-2">
-                <input type="number" class="form-control" id="months" placeholder="60">
+                <input type="number" class="form-control" id="months">
             </div>
         </div>
 
@@ -57,21 +57,27 @@
                 <label for="Interest Rate">Interest Rate</label>
             </div>
             <div class="col-2">
-                <input type="number" class="form-control" id="interestRate" placeholder="3.5%">
+                <input type="number" class="form-control" id="months">
             </div>
         </div>
-
-        <div class="row">
-            <button class="btn btn-outline-primary" type="submit" onclick="calculateLoan()">Calculate</button>
-
-        </div>
-
     </div>
-            
+                <!--Label Columns-->
+                <div class="col-2 text-right">
+                </div>
+
+                <!--Label Inputs-->
+                <div class="col-2 text-right">
+                    <input type="number" class="form-control" id="interestRate">
+                    <button class="btn btn-outline-primary" type="submit" onclick="calculateLoan()">Calculate</button>
+                </div>
 
 
 
-          
+            <!--Display output column-->
+            <div class="col-md">
+
+            </div>
+        
 
         <div class="row">
             <table class="table table-striped">
