@@ -14,12 +14,10 @@ function calculateLoan(){
 
     let remainingBalance = loanAmount;
 
+
     //Interest Payment
     let interestPayment = (remainingBalance) * (interestRate/1200)
 
-    //principal payment
-    let principalPayment = totalMonthlyPayment - interestPayment
-    
-    remainingBalance = 
+
 }
 

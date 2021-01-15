@@ -9,17 +9,20 @@ function calculateLoan(){
 
     }
 
-    //Total Monthly Payment                                                           //(1+rate/1200)^(-NumberOfMonths)
+    //Total Monthly Payment ALGO*******************
+                                                                                  //(1+rate/1200)^(-NumberOfMonths)
     let totalMonthlyPayment = (loanAmount) * (interestRate/1200) / (1 -   Math.pow( (1 + interestRate/1200) , (-months) ) )
+
+    //Total Monthly Payment ALGO*******************
+
 
     let remainingBalance = loanAmount;
 
-    //Interest Payment
-    let interestPayment = (remainingBalance) * (interestRate/1200)
 
-    //principal payment
-    let principalPayment = totalMonthlyPayment - interestPayment
-    
-    remainingBalance = 
+    //Interest Payment ALGO*******************
+    let interestPayment = (remainingBalance) * interestRate
+    //Interest Payment ALGO*******************
+
+
 }
 

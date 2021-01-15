@@ -20,6 +20,6 @@ function calculateLoan(){
     //principal payment
     let principalPayment = totalMonthlyPayment - interestPayment
     
-    remainingBalance = 
+    
 }
 
