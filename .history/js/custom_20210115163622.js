@@ -3,4 +3,5 @@ function calculateLoan(){
     let months = parseInt( document.getElementById("months").value )
     let interestRate = parseInt( document.getElementById("interestRate").value )
 
+
 }
