@@ -23,6 +23,8 @@ function calculateLoan(){
     remainingBalance ;
     
     
+
+
     //will later on be used in order to display output
     let tBody ="";
     let output=["Hello","This","is","a","Test"];
