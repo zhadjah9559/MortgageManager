@@ -35,86 +35,79 @@
     </div>
             
     <div class="container">
+
+        <div class="row">
+            <div class="col-4">
+
+            </div>
+                
+
+        </div>
+        <!--INPUTS COLUMN-->
+        
+        <!--INPUTS COLUMN-->
+
+        <!--OUTPUTS COLUMN-->
+
+        <!--OUTPUTS COLUMN-->
+
+
+
         <div class="row">
 
-            <!--INPUTS COLUMN-->
-            <div class="col-4">
-                <div class="col-lg-4" style="border:2px solid black;">
-                    <div class="row">
-                        <div class="col-2 ml-3">
-                            <label for="Loan Amount">Loan Amount($)</label>
-                        </div>
-                        <div class="col-3 ml-3">
-                            <input type="number" class="form-control" id="loanAmount" placeholder="100000">
-                        </div>
-                    </div>    
-                    <div class="row">
-                        <div class="col-2 ml-3">
-                            <label for="Term">Term(Months)</label>
-                        </div>
-                        <div class="col-3 ml-3">
-                            <input type="number" class="form-control" id="months" placeholder="60">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2 ml-3">
-                            <label for="Interest Rate">Interest Rate</label>
-                        </div>
-                        <div class="col-3 ml-3">
-                            <input type="number" class="form-control" id="interestRate" placeholder="3.5%">
-                        </div>
-                    </div>
-                    <div class="row offset-2">
-                        <button class="btn btn-outline-primary" type="submit" onclick="calculateLoan()">Calculate</button>
-                    </div>
-                </div>
-            </div>
-            <!--INPUTS COLUMN-->
+            
 
-            <!--OUTPUTS COLUMN-->
-            <div class="col">
-                <div class="col-lg-9 mr-3" style="border:px solid black;">
-                    <div class="row justify-content-center">
-                        <h3>Your Monthly Payments</h3>
+
+
+            <div class="col-lg-9 mr-3" style="border:px solid black;">
+                <div class="row justify-content-center">
+                    <h3>Your Monthly Payments</h3>
+                </div>
+
+
+                <div class="row justify-content-center mt-5">
+                    <h4 id="monthlyPayment">Place Holder</h4>
+                </div>
+
+
+                <div class="row justify-content-center mt-5">
+                    <div class="col-3">
+                        <h4>Total Principal</h4>
                     </div>
-    
-    
-                    <div class="row justify-content-center mt-5">
-                        <h4 id="monthlyPayment">Place Holder</h4>
+                    <div class="col-3 offset-6">
+                        <h4 id="totalPrincipalOutput" class="text-right">$Test</h4>
+                    </div>  
+
+
+                    <div class="col-3">
+                        <h4>Total Interest</h4>
                     </div>
-    
-    
-                    <div class="row justify-content-center mt-5">
-                        <div class="col-3">
-                            <h4>Total Principal</h4>
-                        </div>
-                        <div class="col-3 offset-6">
-                            <h4 id="totalPrincipalOutput" class="text-right">$Test</h4>
-                        </div>  
-    
-    
-                        <div class="col-3">
-                            <h4>Total Interest</h4>
-                        </div>
-                        <div class="col-3 offset-6">
-                            <h4 id="totalInterestOutput" class="text-right">$Test</h4>
-                        </div>  
-    
-    
-                        <div class="col-3">
-                            <h4>Total Cost</h4>
-                        </div>
-                        <div class="col-3 offset-6">
-                            <h4 id="totalCostOutput" class="text-right">$Test</h4>
-                        </div>  
-    
+                    <div class="col-3 offset-6">
+                        <h4 id="totalInterestOutput" class="text-right">$Test</h4>
+                    </div>  
+
+
+                    <div class="col-3">
+                        <h4>Total Cost</h4>
                     </div>
+                    <div class="col-3 offset-6">
+                        <h4 id="totalCostOutput" class="text-right">$Test</h4>
+                    </div>  
+
                 </div>
             </div>
-            <!--OUTPUTS COLUMN-->
 
         </div>
     </div>
+
+
+
+
+
+
+
+
+
 
     
     <div class="container">
