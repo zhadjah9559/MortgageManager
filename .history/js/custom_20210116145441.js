@@ -28,8 +28,7 @@ function calculateLoan(){
     }
 
 
-
-    //loop will perform 60 times meaning you will get 60 elements for the variables declared inside
+    //loop will perform 60 times meaning you will get 60 indices
     for (let i = 0; i < months; i++) {
         //Interest Payment
         interestPayment.push(  (remainingBalance) * (interestRate/1200)  ) 
@@ -44,7 +43,7 @@ function calculateLoan(){
     }
 
 
-
+    
     //will later on be used in order to display output
     let tBody ="";
     for (let i = 0; i < months; i++) {
