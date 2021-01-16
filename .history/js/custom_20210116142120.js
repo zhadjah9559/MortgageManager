@@ -42,8 +42,9 @@ function calculateLoan(){
 
     //will later on be used in order to display output
     let tBody ="";
+    let output=["Hello","This","is","a","Test"];
     for (let i = 0; i < months; i+=5) {
-        tBody += `<tr> <td>${ i+1 }</td> <td>$${  (Math.round(totalMonthlyPayment * 100) / 100).toFixed(2) }</td>
+        tBody += `<tr> <td>${i+1}</td> <td>$${  (Math.round(totalMonthlyPayment * 100) / 100).toFixed(2) }</td>
                   <td>${ principalPayments[i] }</td> <td>${ interestPayment[i] }</td> 
                   <td>${ remainingBalance[i] }</td> </tr>` 
     }

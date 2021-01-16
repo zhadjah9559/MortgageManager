@@ -7,13 +7,8 @@ function calculateLoan(){
     //DONT FORGET TO CONVERT THIS TO A PERCENTAGE
     let interestRate = parseInt( document.getElementById("interestRate").value )
 
-    //Keep track of interest payments 
-    let interestPayment = new Array();
 
-    //Keep track of principal payments
-    let principalPayments = new Array();
-
-    //END OF DECLARATIONS*******************************************************
+    //END OF DECLARATIONS
 
     //input validation to make sure interest is solid number
     if(interestRate >= 100){
@@ -24,15 +19,18 @@ function calculateLoan(){
     const totalMonthlyPayment = (loanAmount) * (interestRate/1200) / (1 -   Math.pow( (1 + interestRate/1200) , (-months) ) )
 
 
-    //loop will perform 60 times meaning you will get 60 indices
-    for (let i = 0; i < months; i++) {
-        //Interest Payment
-        interestPayment.push(  (remainingBalance) * (interestRate/1200)  ) 
 
-        //principal payment
-        principalPayments.push(  totalMonthlyPayment - interestPayment  ) 
+
+    //Interest Payment
+    let interestPayment[] = (remainingBalance) * (interestRate/1200)
+
+    //principal payment
+    let principalPayments = totalMonthlyPayment - interestPayment
+    
+    remainingBalance -= principalPayments;
+    
+    for (let i = 0; i < months; i++) {
         
-        remainingBalance -= principalPayments;        
     }
 
 
@@ -42,10 +40,11 @@ function calculateLoan(){
 
     //will later on be used in order to display output
     let tBody ="";
-    for (let i = 0; i < months; i+=5) {
-        tBody += `<tr> <td>${ i+1 }</td> <td>$${  (Math.round(totalMonthlyPayment * 100) / 100).toFixed(2) }</td>
-                  <td>${ principalPayments[i] }</td> <td>${ interestPayment[i] }</td> 
-                  <td>${ remainingBalance[i] }</td> </tr>` 
+    let output=["Hello","This","is","a","Test"];
+    for (let i = 0; i < output.length; i+=5) {
+        tBody += `<tr> <td>${i+1}</td> <td>$${  (Math.round(totalMonthlyPayment * 100) / 100).toFixed(2) }</td>
+                  <td>${principalPayments[i]}</td> <td>${output[i+3]}</td> 
+                  <td>${output[i+4]}</td> </tr>` 
     }
     document.getElementById("tBody").innerHTML = tBody
 
