@@ -16,7 +16,6 @@ function calculateLoan(){
 
     //keep track of total interest
     let totalInterest = new Array()
-    totalInterest.push(0);
 
     //Total Monthly Payment                                                         (1+rate/1200)^(-NumberOfMonths)
     let totalMonthlyPayment = (loanAmount) * (interestRate/1200) / (1 -   Math.pow( (1 + interestRate/1200) , (-months) ) )
@@ -27,6 +26,8 @@ function calculateLoan(){
     if(interestRate >= 100){
 
     }
+
+    totalInterest.push(0);
 
     //loop will perform 60 times meaning you will get 60 elements for the variables declared inside
     for (let i = 0; i < months; i++) {
@@ -51,7 +52,7 @@ function calculateLoan(){
                        <td>$${  (Math.round(totalMonthlyPayment * 100) / 100).toFixed(2) }</td>             
                        <td>$${  (Math.round(principalPayments[i] * 100) / 100).toFixed(2)   }</td>          
                        <td>${   (Math.round(interest[i] * 100) / 100).toFixed(2) }%</td> 
-                       <td>$${  (Math.round(totalInterest[i+1] * 100) / 100).toFixed(2)   }</td>
+                       <td>$${  (Math.round(totalInterest[i] * 100) / 100).toFixed(2)   }</td>
                        <td>$${  (Math.round(remainingBalance[i+1] * 100) / 100).toFixed(2)   }</td>
                  </tr>` 
     }
