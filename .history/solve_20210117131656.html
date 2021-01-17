@@ -49,11 +49,11 @@
 
             <!--INPUTS COLUMN-->
             <div class="col-4" style="border-style:groove; border-width: 1px; border-radius:4px;border-right-style:none;">
-                <div class="row mt-5">
+                <div class="row mt-5 form-control">
                     <div class="col-5 ml-3">
                         <label for="Loan Amount">Loan Amount($)</label>
                     </div>
-                    <div class="col-5 ml-3">
+                    <div class="col-4 ml-3">
                         <input type="number" class="form-control" id="loanAmount" placeholder="100000">
                     </div>
                 </div>    
@@ -61,7 +61,7 @@
                     <div class="col-5 ml-3">
                         <label for="Term">Term(Months)</label>
                     </div>
-                    <div class="col-5 ml-3">
+                    <div class="col-4 ml-3">
                         <input type="number" class="form-control" id="months" placeholder="60">
                     </div>
                 </div>
@@ -69,12 +69,12 @@
                     <div class="col-5 ml-3">
                         <label for="Interest Rate">Interest Rate</label>
                     </div>
-                    <div class="col-5 ml-3">
+                    <div class="col-4 ml-3">
                         <input type="number" class="form-control" id="interestRate" placeholder="3.5%">
                     </div>
                 </div>
                 <div class="row offset-7 mt-4">
-                    <button class="btn" type="submit" style="background-color: #3B8004; color:white;"  onclick="calculateLoan()">Calculate</button>
+                    <button class="btn btn-primary" type="submit" onclick="calculateLoan()">Calculate</button>
                 </div>
             </div>
             <!--INPUTS COLUMN-->
@@ -86,40 +86,35 @@
                     <h3>Your Monthly Payments</h3>
                 </div>
 
+
                 <div class="row justify-content-center mt-3">
                     <h2 id="monthlyPayment">$0.00</h2>
                 </div>
-                
-                
+
+
                 <div class="row justify-content-center mt-5">
-
-                    <!--TOTALPRINCIPAL-->
                     <div class="col-3">
-                        <h5>Total Principal</h5>
+                        <h4>Total Principal</h4>
                     </div>
                     <div class="col-3 offset-6">
-                        <h5 id="totalPrincipalOutput" class="text-right">$0.00</h5>
+                        <h4 id="totalPrincipalOutput" class="text-right">$0.00</h4>
                     </div>  
-                    <!--TOTALPRINCIPAL-->
 
 
-                    <!--TOTALINTEREST-->
                     <div class="col-3">
-                        <h5>Total Interest</h5>
+                        <h4>Total Interest</h4>
                     </div>
                     <div class="col-3 offset-6">
-                        <h5 id="totalInterestOutput" class="text-right">$0.00</h5>
+                        <h4 id="totalInterestOutput" class="text-right">$0.00</h4>
                     </div>  
-                    <!--TOTALINTEREST-->
 
-                    <!--TOTALCOST-->
+
                     <div class="col-3">
-                        <h5>Total Cost</h5>
+                        <h4>Total Cost</h4>
                     </div>
                     <div class="col-3 offset-6">
-                        <h5 id="totalCostOutput" class="text-right">$0.00</h5>
+                        <h4 id="totalCostOutput" class="text-right">$0.00</h4>
                     </div>  
-                    <!--TOTALCOST-->
 
                 </div>
                 <br/>

@@ -55,8 +55,8 @@ function calculateLoan(){
     }
     document.getElementById("tBody").innerHTML = tBody
     document.getElementById("totalPrincipalOutput").innerHTML = `$${(Math.round(  loanAmount  *100)/100).toFixed(2)}`
-    document.getElementById("totalInterestOutput").innerHTML = `$${(Math.round(  totalInterest[months.length-1]  *100)/100).toFixed(2)}`
-    document.getElementById("totalCostOutput").innerHTML = `$${(Math.round( (loanAmount + totalInterest[months.length-1])  *100)/100).toFixed(2)}`
+    document.getElementById("totalInterestOutput").innerHTML = `$${(Math.round(  totalInterest[months.length]  *100)/100).toFixed(2)}`
+    document.getElementById("totalCostOutput").innerHTML = `$${(Math.round( (loanAmount + totalInterest[-1])  *100)/100).toFixed(2)}`
 
     
 

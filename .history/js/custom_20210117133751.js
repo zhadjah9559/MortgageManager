@@ -42,6 +42,8 @@ function calculateLoan(){
         remainingBalance.push( remainingBalance[i] - principalPayments[i] )        
     }
 
+
+
     //will later on be used in order to display output
     let tBody ="";
     for (let i = 0; i < months; i++) {
@@ -54,9 +56,7 @@ function calculateLoan(){
                  </tr>` 
     }
     document.getElementById("tBody").innerHTML = tBody
-    document.getElementById("totalPrincipalOutput").innerHTML = `$${(Math.round(  loanAmount  *100)/100).toFixed(2)}`
-    document.getElementById("totalInterestOutput").innerHTML = `$${(Math.round(  totalInterest[months.length-1]  *100)/100).toFixed(2)}`
-    document.getElementById("totalCostOutput").innerHTML = `$${(Math.round( (loanAmount + totalInterest[months.length-1])  *100)/100).toFixed(2)}`
+    document.getElementById("monthlyPayment").innerHTML = `$${}`
 
     
 

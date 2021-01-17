@@ -1,12 +1,12 @@
 function calculateLoan(){
-    let loanAmount = parseInt( document.getElementById("loanAmount").value )
+    let loanAmount = parseFloat( document.getElementById("loanAmount").value )
     let months = parseInt( document.getElementById("months").value )    
 
     //before the very first month
     let remainingBalance = [loanAmount]
 
     //DONT FORGET TO CONVERT THIS TO A PERCENTAGE
-    let interestRate = parseFloat( document.getElementById("interestRate").value )
+    let interestRate = parseInt( document.getElementById("interestRate").value )
 
     //Keep track of interest payments 
     let interest = new Array()
@@ -42,6 +42,8 @@ function calculateLoan(){
         remainingBalance.push( remainingBalance[i] - principalPayments[i] )        
     }
 
+
+
     //will later on be used in order to display output
     let tBody ="";
     for (let i = 0; i < months; i++) {
@@ -54,11 +56,6 @@ function calculateLoan(){
                  </tr>` 
     }
     document.getElementById("tBody").innerHTML = tBody
-    document.getElementById("totalPrincipalOutput").innerHTML = `$${(Math.round(  loanAmount  *100)/100).toFixed(2)}`
-    document.getElementById("totalInterestOutput").innerHTML = `$${(Math.round(  totalInterest[months.length-1]  *100)/100).toFixed(2)}`
-    document.getElementById("totalCostOutput").innerHTML = `$${(Math.round( (loanAmount + totalInterest[months.length-1])  *100)/100).toFixed(2)}`
-
-    
 
 
 }
