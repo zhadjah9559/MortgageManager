@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Mortgage Loan Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/prism.css">
+  </head>
+  <body>
+      
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: green;">
+        <a class="navbar-brand" href="#">Calc</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">🏡Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="solve.html">💰Solve</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="code.html">💰Code <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <pre class="line-numbers language-javascript">        
+        <code class="language-javascript">
+
+    function calculateLoan(){
+        let loanAmount = parseInt( document.getElementById("loanAmount").value )
+        let months = parseInt( document.getElementById("months").value )    
+
+        //before the very first month
+        let remainingBalance = [loanAmount]
+
+        //DONT FORGET TO CONVERT THIS TO A PERCENTAGE
+        let interestRate = parseFloat( document.getElementById("interestRate").value )
+
+        //Keep track of interest payments 
+        let interest = new Array()
+
+        //Keep track of principal payments
+        let principalPayments = new Array()
+
+        //keep track of total interest
+        let totalInterest = new Array()
+        totalInterest.push(0);
+
+        //Total Monthly Payment                                                         (1+rate/1200)^(-NumberOfMonths)
+        let totalMonthlyPayment = (loanAmount) * (interestRate/1200) / (1 -   Math.pow( (1 + interestRate/1200) , (-months) ) )
+
+        //END OF DECLARATIONS*******************************************************
+
+        //input validation to make sure interest is valid number
+        if(interestRate >= 100){
+
+        }
+
+        //loop will perform 60 times meaning you will get 60 elements for the variables declared inside
+        for (let i = 0; i < months; i++) {
+        //Interest 
+        interest.push(  (remainingBalance[i]) * (interestRate/1200)  ) 
+
+        //principal payment
+        principalPayments.push(  totalMonthlyPayment - interest[i]  ) 
+
+        //totalInterest
+        totalInterest.push( totalInterest[i] + ( (totalMonthlyPayment) - (principalPayments[i]) )    )
+
+        remainingBalance.push( remainingBalance[i] - principalPayments[i] )        
+        }
+
+        //will later on be used in order to display output
+        let tBody ="";
+        for (let i = 0; i < months; i++) {
+        tBody += `<tr> <td>${ i+1 }</td>                                                                    
+                        <td>$${  (Math.round(totalMonthlyPayment * 100) / 100).toFixed(2) }</td>             
+                        <td>$${  (Math.round(principalPayments[i] * 100) / 100).toFixed(2)   }</td>          
+                        <td>${   (Math.round(interest[i] * 100) / 100).toFixed(2) }%</td> 
+                        <td>$${  (Math.round(totalInterest[i+1] * 100) / 100).toFixed(2)   }</td>
+                        <td>$${  (Math.round(remainingBalance[i+1] * 100) / 100).toFixed(2)   }</td>
+                    </tr>` 
+        }
+        document.getElementById("tBody").innerHTML = tBody
+        document.getElementById("totalPrincipalOutput").innerHTML = `$${(Math.round(  loanAmount  *100)/100).toFixed(2)}`
+        document.getElementById("totalInterestOutput").innerHTML = `$${(Math.round(  totalInterest[months]  *100)/100).toFixed(2)}`
+        document.getElementById("totalCostOutput").innerHTML = `$${(Math.round( (loanAmount + totalInterest[months])  *100)/100).toFixed(2)}`
+        }
+
+        </code>
+    </pre>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/prism.js"></script>
+  </body>
+</html>

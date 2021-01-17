@@ -1,0 +1,19 @@
+.navbar-dark .navbar-nav .active>.nav-link{
+    color:white;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color:black;
+}
+.navbar .navbar-brand{
+    color:black;
+}
+
+.indexContainer {
+    width:860px;
+    height:540px;
+    position:absolute;
+    top:40%;
+    left:50%;
+    margin-top:-320px;
+    margin-left:-480px;
+}
