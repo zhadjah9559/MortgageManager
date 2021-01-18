@@ -44,7 +44,7 @@ function calculateLoan(){
         tBody += `<tr> <td>${ i+1 }</td>                                                                    
                        <td>$${  (Math.round(totalMonthlyPayment * 100) / 100).toFixed(2) }</td>             
                        <td>$${  (Math.round(principalPayments[i] * 100) / 100).toFixed(2)   }</td>          
-                       <td>$${  (Math.round(interest[i] * 100) / 100).toFixed(2) }</td> 
+                       <td>$${   (Math.round(interest[i] * 100) / 100).toFixed(2) }</td> 
                        <td>$${  (Math.round(totalInterest[i+1] * 100) / 100).toFixed(2)   }</td>
                        <td>$${  (Math.round(remainingBalance[i+1] * 100) / 100).toFixed(2)   }</td>
                  </tr>` 
