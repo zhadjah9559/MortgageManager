@@ -8,14 +8,20 @@
     color:white;
 }
 
+@media (max-width: 1366px){
+
+    
+
+}
+
 .indexContainer {
-    width: 860px;
-    height: 540px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    margin-top: -180px;
-    margin-left: -480px;
+    width:860px;
+    height:540px;
+    position:absolute;
+    top:47%;
+    left:50%;
+    margin-top:-320px;
+    margin-left:-480px;
 }
 
 ::selection{
