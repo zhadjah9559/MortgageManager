@@ -24,7 +24,7 @@ function calculateLoan(){
 
 
     
-    //loop will iterate for however many times the user declares in terms of months 
+    //loop will perform for all months that the user declares 
     for (let i = 0; i < months; i++) {
         //Interest 
         interest.push(  (remainingBalance[i]) * (interestRate/1200)  ) 
@@ -33,7 +33,7 @@ function calculateLoan(){
         principalPayments.push(  totalMonthlyPayment - interest[i]  ) 
 
         //totalInterest
-        totalInterest.push( totalInterest[i] + ( (totalMonthlyPayment) - (principalPayments[i]) ) )
+        totalInterest.push( totalInterest[i] + ( (totalMonthlyPayment) - (principalPayments[i]) )    )
         
         remainingBalance.push( remainingBalance[i] - principalPayments[i] )        
     }

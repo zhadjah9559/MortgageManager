@@ -33,7 +33,7 @@ function calculateLoan(){
         principalPayments.push(  totalMonthlyPayment - interest[i]  ) 
 
         //totalInterest
-        totalInterest.push( totalInterest[i] + ( (totalMonthlyPayment) - (principalPayments[i]) ) )
+        totalInterest.push( totalInterest[i] + ( (totalMonthlyPayment) - (principalPayments[i]) )  )
         
         remainingBalance.push( remainingBalance[i] - principalPayments[i] )        
     }
